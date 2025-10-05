@@ -3,10 +3,12 @@ import toast from 'react-hot-toast';
 import Cookies from 'js-cookie';
 
 // Create axios instance
+// In src/utils/api.js or wherever you configure axios
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:5000/api',
+  baseURL: 'https://resume-rag-0m0d.onrender.com/api',
   timeout: 30000,
 });
+
 
 // Request interceptor to add auth token
 api.interceptors.request.use(
