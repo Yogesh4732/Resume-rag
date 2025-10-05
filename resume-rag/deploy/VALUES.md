@@ -5,7 +5,7 @@ This file lists the exact environment variable keys and example placeholder valu
 ## Backend (Render) - environment variables
 
 Key: MONGODB_URI
-Value: mongodb+srv://yogesh:Yogesh4732@resume-rag.zs7xaiw.mongodb.net/resume_rag?retryWrites=true&w=majority
+Value: mongodb+srv://yogesh:<PASSWORD_ENCODED>@resume-rag.zs7xaiw.mongodb.net/<DBNAME>?retryWrites=true&w=majority
 
 Key: JWT_SECRET
 Value: replace_with_a_strong_secret_here
