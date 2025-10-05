@@ -39,9 +39,16 @@ app.locals.redis = redisClient;
 
 // Middleware
 app.use(helmet());
+const allowedOrigins = process.env.FRONTEND_URL.split(",");
 app.use(cors({
-	origin: process.env.FRONTEND_URL,
-	credentials: true
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
 }));
 
 app.use(express.json({ limit: '50mb' }));
