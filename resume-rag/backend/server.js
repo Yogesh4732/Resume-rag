@@ -66,6 +66,10 @@ app.use('/api/resumes', resumeRoutes);
 app.use('/api/jobs', jobRoutes);
 app.use('/api/ask', askRoutes);
 
+app.get("/", (req, res) => {
+  res.send("ResumeRAG API is running.");
+});
+
 // Health check
 app.get('/health', (req, res) => {
 	res.json({ status: 'OK', timestamp: new Date().toISOString() });
